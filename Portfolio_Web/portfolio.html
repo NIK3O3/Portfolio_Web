@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Student Portfolio</title>
+</head>
+
+<body>
+
+  <h1>Моє портфоліо</h1>
+  <p>Вітаю вас на моєму персональному веб-сайті портфоліо.</p>
+
+  <h2>Про мене</h2>
+
+  <p>Привіт! Мене звати Нікіта. Я студент факультету інженерії програмного забезпечення і захоплююся розробкою
+    програмного забезпечення,
+    програмуванням та сучасними технологіями.</p>
+
+  <p>Мені подобається вивчати нові мови програмування, створювати проекти та вирішувати складні задачі.</p>
+
+  <h2>Навігація</h2>
+
+  <ul>
+    <li><a href="#skills">Навички</a></li>
+    <li><a href="#projects">Проекти</a></li>
+    <li><a href="#education">Освіта</a></li>
+    <li><a href="#media">Відео</a></li>
+    <li><a href="#contact">Звʼязок</a></li>
+  </ul>
+
+  <h2 id="skills">Мої навички:</h2>
+
+  <h3>Програмування</h3>
+
+  <ul>
+    <li>C++</li>
+    <li>HTML + CSS</li>
+    <li>PHP</li>
+    <li>Python</li>
+    <li>JavaScript (basic)</li>
+    <li>Git</li>
+  </ul>
+
+  <h3>Професійні навички (в процесі здобуття)</h3>
+
+  <ol>
+    <li>Вирішення проблем</li>
+    <li>Командна робота</li>
+    <li>Тайм-менеджмент</li>
+    <li>Аналітичне мислення</li>
+  </ol>
+
+  <h2 id="projects">Мої проекти</h2>
+
+  <h3>Функції першого класу</h3>
+  <p>Розробка на мові Python</p>
+  <p>
+    <a href="https://github.com/NIK3O3/First-class-functions" target="_blank">Відвідати</a>
+  </p>
+
+  <h3>База даних приймальної комісії університету</h3>
+  <p>База даних - MySql</p>
+  <p>
+    <a href="https://github.com/NIK3O3/DB_university" target="_blank">Відвідати</a>
+  </p>
+
+  <h2 id="education">Освіта</h2>
+
+  <table border="2">
+
+    <tr>
+      <th colspan="4" align="center">Коледж</th>
+    </tr>
+
+    <tr>
+      <th>Рік</th>
+      <th>Курс</th>
+      <th>Дисципліна</th>
+      <th>Оцінка</th>
+    </tr>
+
+    <tr>
+      <td>2021</td>
+      <td align="center">1</td>
+      <td>Математика</td>
+      <td align="center">10</td>
+    </tr>
+
+    <tr>
+      <td>2022</td>
+      <td align="center">2</td>
+      <td>Основи програмування</td>
+      <td align="center">5</td>
+    </tr>
+
+    <tr>
+      <td>2023</td>
+      <td align="center">3</td>
+      <td>Програмування Python</td>
+      <td align="center">5</td>
+    </tr>
+
+    <tr>
+      <td>2024</td>
+      <td align="center">4</td>
+      <td>Бази даних</td>
+      <td align="center">5</td>
+    </tr>
+
+  </table>
+
+  <br>
+
+  <table border="2">
+
+    <tr>
+      <th colspan="4" align="center">Університет</th>
+    </tr>
+
+    <tr>
+      <th>Рік</th>
+      <th>Курс</th>
+      <th>Дисципліна</th>
+      <th>Оцінка</th>
+    </tr>
+
+    <tr>
+      <td>2024</td>
+      <td align="center">2</td>
+      <td>Операційні системи</td>
+      <td align="center">100</td>
+    </tr>
+
+    <tr>
+      <td>2025</td>
+      <td align="center">3</td>
+      <td>Аналіз вимог до ПЗ</td>
+      <td align="center">5</td>
+    </tr>
+
+  </table>
+
+  <h2 id="media">Відео</h2>
+
+  <p>Це коротке відео розповідає про мої інтереси та цілі як майбутнього веб-розробника.</p>
+
+  <video width="400" controls>
+    <source src="/video/video_preview_h264.mp4" type="video/mp4">
+  </video>
+
+  <h2 id="contact">Звʼязок зі мною</h2>
+
+  <p>Якщо ви бажаєте співпрацювати або зв'язатися зі мною, будь ласка, заповніть форму нижче.</p>
+
+  <form id="contactForm">
+
+    <p>Ваше ім'я</p>
+    <input type="text" name="name" required>
+
+    <p>Ваш e-mail</p>
+    <input type="email" name="email" required>
+
+    <p>Ваше повідомлення</p>
+    <textarea name="message" rows="4" required></textarea>
+
+    <p>Яка причина звернення?</p>
+    <select name="reason" required>
+      <option value="">Оберіть причину</option>
+      <option value="internship">Стажування</option>
+      <option value="collaboration">Проектна співпраця</option>
+      <option value="general">Загальні питання</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Надіслати повідомлення">
+
+  </form>
+
+  <p id="thankYouMessage" style="color: green; font-weight: bold; display: none;"></p>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const message = document.getElementById('thankYouMessage');
+
+    form.onsubmit = function (e) {
+      e.preventDefault();
+      message.textContent = "Дякую за звернення!";
+      message.style.display = "block";
+      form.reset();
+    };
+  </script>
+
+  <h2>Зовнішні посилання</h2>
+
+  <p>
+    <a href="https://github.com/NIK3O3" target="_blank">GitHub</a>
+  </p>
+
+  <p>
+    <a href="#top">Повернутися до початку</a>
+  </p>
+
+</body>
+
+</html>
